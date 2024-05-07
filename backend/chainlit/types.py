@@ -154,6 +154,7 @@ class FeedbackDict(TypedDict):
     id: Optional[str]
     value: Literal[0, 1]
     comment: Optional[str]
+    content: Union[str, Dict]
 
 
 @dataclass
@@ -162,6 +163,7 @@ class Feedback:
     value: Literal[0, 1]
     id: Optional[str] = None
     comment: Optional[str] = None
+    content: Union[str, Dict] = None
 
 
 class UpdateFeedbackRequest(BaseModel):

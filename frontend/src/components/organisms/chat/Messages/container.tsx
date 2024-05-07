@@ -74,8 +74,8 @@ const MessageContainer = memo(
       [_uploadFile]
     );
 
-    const enableFeedback = !!projectSettings?.dataPersistence;
-
+    // const enableFeedback = !!projectSettings?.dataPersistence;
+    const enableFeedback = true;
     const navigate = useNavigate();
 
     const onPlaygroundButtonClick = useCallback(

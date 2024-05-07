@@ -559,15 +559,17 @@ async def update_feedback(
 ):
     """Update the human feedback for a particular message."""
     data_layer = get_data_layer()
-    if not data_layer:
-        raise HTTPException(status_code=500, detail="Data persistence is not enabled")
+    # if not data_layer:
+    #     raise HTTPException(status_code=500, detail="Data persistence is not enabled")
+    # update: feedback=Feedback(forId='bd59e405-68e6-43bc-9425-220ffa291cb3', value=1, id=None, comment='hh')
 
     try:
-        feedback_id = await data_layer.upsert_feedback(feedback=update.feedback)
+        feedback_id = update.feedback.forId
+        conv = update.feedback.content
     except Exception as e:
         raise HTTPException(detail=str(e), status_code=500)
 
-    return JSONResponse(content={"success": True, "feedbackId": feedback_id})
+    return JSONResponse(content={"success": True, "feedbackId": feedback_id, "conv": conv})
 
 @app.delete("/feedback")
 async def delete_feedback(
@@ -579,9 +581,9 @@ async def delete_feedback(
 
     data_layer = get_data_layer()
 
-    if not data_layer:
-        raise HTTPException(status_code=400, detail="Data persistence is not enabled")
-
+    # if not data_layer:
+    #     raise HTTPException(status_code=400, detail="Data persistence is not enabled")
+    
     feedback_id = payload.feedbackId
 
     await data_layer.delete_feedback(feedback_id)

@@ -4,7 +4,7 @@ import createTheme from '@mui/material/styles/createTheme';
 import { green, grey, primary, white } from './palette';
 
 const typography = {
-  fontFamily: ['Inter', 'sans-serif'].join(',')
+  fontFamily: ['Arial', 'Helvetica', 'sans-serif'].join(',')
 };
 
 const components = {
@@ -68,9 +68,9 @@ const darkTheme = (fontFamily?: string, breakpoints?: BreakpointsOptions) =>
         paper: grey[900]
       },
       primary: {
-        main: '#F80061',
+        main: '#0e4dc9',
         dark: primary[800],
-        light: '#FFE7EB',
+        light: '#e7efff',
         contrastText: white
       },
       secondary: {
@@ -102,9 +102,9 @@ const lightTheme = (fontFamily?: string, breakpoints?: BreakpointsOptions) =>
         paper: white
       },
       primary: {
-        main: '#F80061',
+        main: '#0e4dc9',
         dark: primary[800],
-        light: '#FFE7EB',
+        light: '#e7efff',
         contrastText: white
       },
       secondary: {

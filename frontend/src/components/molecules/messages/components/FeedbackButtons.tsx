@@ -62,6 +62,7 @@ const FeedbackButtons = ({ message }: Props) => {
           ...(message.feedback || {}),
           forId: message.id,
           value: feedback,
+          content: message.output,
           comment
         }
       );
