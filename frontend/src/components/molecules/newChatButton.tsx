@@ -28,7 +28,6 @@ export default function NewChatButton() {
   const handleConfirm = () => {
     clear();
     navigate('/');
-    handleClose();
   };
 
   return (
@@ -36,16 +35,11 @@ export default function NewChatButton() {
       <AccentButton
         id="new-chat-button"
         variant="outlined"
-        onClick={handleClickOpen}
+        onClick={handleConfirm}
         startIcon={<SquarePenIcon />}
       >
         <Translator path="components.molecules.newChatButton.newChat" />
       </AccentButton>
-      <NewChatDialog
-        open={open}
-        handleClose={handleClose}
-        handleConfirm={handleConfirm}
-      />
     </Box>
   );
 }
