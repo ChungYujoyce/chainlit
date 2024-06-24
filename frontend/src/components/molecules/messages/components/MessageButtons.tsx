@@ -48,7 +48,6 @@ const MessageButtons = ({ message }: Props) => {
       direction="row"
       color={isDark ? grey[400] : grey[600]}
     >
-      {showCopyButton ? <ClipboardCopy value={message.output} /> : null}
       {showFeedbackButtons ? <FeedbackButtons message={message} /> : null}
       {showPlaygroundButton ? <PlaygroundButton step={message} /> : null}
     </Stack>
